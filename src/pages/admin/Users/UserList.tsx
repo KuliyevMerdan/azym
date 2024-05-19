@@ -56,16 +56,16 @@ export function UserList(){
     useEffect(()=>{getUsers()}, [currentPage])
     return(
         <div className="container my-4">
-            <h2 className="text-center mb-5">List of Users</h2>
+            <h2 className="text-center mb-5">Ulanyjylaryň sanawy</h2>
             <table className="table table-bordered">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Actions</th>
+                        <th>Ady</th>
+                        <th>Familiýasy</th>
+                        <th>Elektron poçta</th>
+                        <th>Wezipesi</th>
+                        <th>Hereket</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -77,11 +77,11 @@ export function UserList(){
                                     <td>{user.firstName}</td>
                                     <td>{user.lastName}</td>
                                     <td>{user.email}</td>
-                                    <td>{user.role === "admin" ? <span className="badge text-bg-warning">Admin</span> :
-                                        <span className="badge text-bg-success">Client</span>
+                                    <td>{user.role === "admin" ? <span className="badge text-bg-warning">Dolandyryjy</span> :
+                                        <span className="badge text-bg-success">Müşderi</span>
                                     }</td>
                                     <td>
-                                        <Link to={"/admin/users/details/" + user.id} className="btn btn-primary btn-sm" role="button">Details</Link>
+                                        <Link to={"/admin/users/details/" + user.id} className="btn btn-primary btn-sm" role="button">Maglumat</Link>
                                     </td>
                                 </tr>
                             )

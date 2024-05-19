@@ -14,9 +14,9 @@ export function Login(){
        
         event.preventDefault();
 
-        let email = event.target.email.value;
-        let password = event.target.password.value;
-        let expiresInMins = 60
+        let email = 'admin'; // event.target.email.value;
+        let password = 'admin' // event.target.password.value;
+        let role = 'admin'
 
         if(!email || !password){
             alert("Please fill all the fields!")
@@ -25,54 +25,58 @@ export function Login(){
 
         const credentials = {
             email,
-            password
+            password,
+            role
         }
-        try{
-            const response = await fetch('https://dummyjson.com/auth/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  username: 'kminchelle',
-                  password: '0lelplR',
-                  expiresInMins: 60, // optional, defaults to 60
-                })
-            })
-            const data = await response.json()
-            if(response.ok){
-                console.log(data)
-                data.role = "admin"
-                setUserCredentials(data)
-                navigate('/')
-            } else {
-                console.log("Unable to login")
-            }
-        }
-        catch(error) {
-            console.log(
-                "Unable to connect"
-            )
-        }
+        setUserCredentials(credentials)
+        navigate('/')
+
+        // try{
+        //     const response = await fetch('https://dummyjson.com/auth/login', {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify({
+        //           username: 'kminchelle',
+        //           password: '0lelplR',
+        //           expiresInMins: 60, // optional, defaults to 60
+        //         })
+        //     })
+        //     const data = await response.json()
+        //     if(response.ok){
+        //         console.log(data)
+        //         data.role = "admin"
+        //         setUserCredentials(data)
+        //         navigate('/')
+        //     } else {
+        //         console.log("Unable to login")
+        //     }
+        // }
+        // catch(error) {
+        //     console.log(
+        //         "Unable to connect"
+        //     )
+        // }
     }
     return(
         <div className="container my-4">
             <div className="mx-auto rounded border p-4" style={{ width: "400px" }}>
-                <h2 className="text-center mb-5">Welcome, please login</h2>
+                <h2 className="text-center mb-5">Hoş geldiňiz, ulgama girmek</h2>
 
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label  className="form-label">Email</label>
+                        <label  className="form-label">Elektron poçta</label>
                         <input className="form-control" name="email" />
                     </div>
                     <div className="mb-3">
-                        <label  className="form-label">Password</label>
+                        <label  className="form-label">Açar sözi</label>
                         <input className="form-control" type="password" name="password" />
                     </div>
                     <div className="row">
                         <div className="col d-grid">
-                            <button type="submit" className="btn btn-primary">Login</button>
+                            <button type="submit" className="btn btn-primary">Girmek</button>
                         </div>
                         <div className="col d-grid">
-                            <Link to="/" role="button" className="btn btn-outline-primary">Cancel</Link>
+                            <Link to="/" role="button" className="btn btn-outline-primary">Goýbolsun etmek</Link>
                         </div>
                     </div>
                 </form>

@@ -10,35 +10,35 @@ export function UserProfile(){
                 {   
                     action === "default" &&
                     <div className="col-lg-8 mx-auto rounded border p-4">
-                        <h2 className="mb-3">User Profile</h2>
+                        <h2 className="mb-3">Sazlamalar</h2>
                         <hr />
                         <Details />
                         <hr />
-                        <button className="btn btn-primary btn-sm me-2" onClick={()=>{setAction("update_profile")}}>Update Profile</button>
-                        <button className="btn btn-warning btn-sm" onClick={()=>{setAction("update_password")}}>Update password</button>
+                        <button className="btn btn-primary btn-sm me-2" onClick={()=>{setAction("update_profile")}}>Hasaby täzelemek</button>
+                        <button className="btn btn-warning btn-sm" onClick={()=>{setAction("update_password")}}>Açar sözi täzelemek</button>
                     </div>
                 }
                 {
                     action === "update_profile" &&
                     <div className="col-lg-8 mx-auto rounded border p-4">
-                        <h2 className="mb-3 text-center">Update Profile</h2>
+                        <h2 className="mb-3 text-center">Hasaby täzelemek</h2>
                         <hr />
                         <UpdateProfile />
                         <hr />
                         <div className="text-center">
-                            <button className="btn btn-link text-decoration-none" onClick={()=>{setAction("default")}}>Back to Profile</button>
+                            <button className="btn btn-link text-decoration-none" onClick={()=>{setAction("default")}}>Sazlamalara gaýdyp gelmek</button>
                         </div>
                     </div>
                 }
                 {
                     action === "update_password" &&
                     <div className="col-lg-5 col-md-8 mx-auto rounded border p-4">
-                        <h2 className="mb-3 text-center">Update Password</h2>
+                        <h2 className="mb-3 text-center">Açar sözi täzelemek</h2>
                         <hr />
                         <UpdatePassword />
                         <hr />
                         <div className="text-center">
-                        <button className="btn btn-link text-decoration-none" onClick={()=>{setAction("default")}}>Back to Profile</button>
+                        <button className="btn btn-link text-decoration-none" onClick={()=>{setAction("default")}}>Sazlamalara gaýdyp gelmek</button>
                         </div>
                     </div>
                 }
@@ -54,27 +54,23 @@ function Details(){
     return(
         <>
             <div className="row mb-3">
-                <div className="col-sm-3">First Name</div>
+                <div className="col-sm-3">Ady</div>
                 <div className="col-sm-6">{userCredentials.firstName}</div>
             </div>
             <div className="row mb-3">
-                <div className="col-sm-3">Last Name</div>
+                <div className="col-sm-3">Familiýasy</div>
                 <div className="col-sm-6">{userCredentials.lastName}</div>
             </div>
             <div className="row mb-3">
-                <div className="col-sm-3">Email</div>
+                <div className="col-sm-3">Elektron poçta</div>
                 <div className="col-sm-6">{userCredentials.email}</div>
             </div>
             <div className="row mb-3">
-                <div className="col-sm-3">Gender</div>
-                <div className="col-sm-6">{userCredentials.gender}</div>
-            </div>
-            <div className="row mb-3">
-                <div className="col-sm-3">Username</div>
+                <div className="col-sm-3">Ulanyjy ady</div>
                 <div className="col-sm-6">{userCredentials.username}</div>
             </div>
             <div className="row mb-3">
-                <div className="col-sm-3">Role</div>
+                <div className="col-sm-3">Wezipesi</div>
                 <div className="col-sm-6">{userCredentials.role === "admin" ? "Admin" : "Client"}</div>
             </div>
         </>
@@ -92,35 +88,37 @@ function UpdateProfile(){
             alert("Please fill all the fields!")
             return
         }
+        setUserCredentials({...userCredentials, user})
+        console.log("Profile updated successfully! Server response:")
 
-        try{
-            const response = await fetch(`https://dummyjson.com/users/${userCredentials.id}`, {
-                method: 'PATCH', 
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${userCredentials.token}`
-                },
-                body: JSON.stringify(
-                  user
-                )
-            })
-            const data = await response.json()
-            if(response.ok){
-                setUserCredentials({...userCredentials, data})
-                console.log("Profile updated successfully! Server response:" + data)
-            }
-            else if (response.status === 401) {
-                setUserCredentials(null)
-                console.log("Session expired! Please login again.")
-                navigate('/auth/login')
-            }
-            else {
-                console.log("Unable to update user profile: " + data)
-            }
-        }
-        catch(error){
-            console.log("Unable to connect")
-        }
+        // try{
+        //     const response = await fetch(`https://dummyjson.com/users/${userCredentials.id}`, {
+        //         method: 'PATCH', 
+        //         headers: { 
+        //             'Content-Type': 'application/json',
+        //             'Authorization': `Bearer ${userCredentials.token}`
+        //         },
+        //         body: JSON.stringify(
+        //           user
+        //         )
+        //     })
+        //     const data = await response.json()
+        //     if(response.ok){
+        //         setUserCredentials({...userCredentials, data})
+        //         console.log("Profile updated successfully! Server response:" + data)
+        //     }
+        //     else if (response.status === 401) {
+        //         setUserCredentials(null)
+        //         console.log("Session expired! Please login again.")
+        //         navigate('/auth/login')
+        //     }
+        //     else {
+        //         console.log("Unable to update user profile: " + data)
+        //     }
+        // }
+        // catch(error){
+        //     console.log("Unable to connect")
+        // }
     }
     return(
         <>
@@ -156,7 +154,7 @@ function UpdateProfile(){
                     </div>
                 </div>
                 <div className="text-end">
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary" onClick={()=>{navigate("/")}}>Tassyklamak</button>
                     {/* <button className="btn btn-warning btn-sm">Cancel</button> */}
                 </div>
             </form>
@@ -182,33 +180,33 @@ function UpdatePassword(){
         }
 
         const passwordObj = {password}
-        try{
-            const response = await fetch(`https://dummyjson.com/users/${userCredentials.id}`, {
-                method: 'PATCH', 
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${userCredentials.token}`
-                },
-                body: JSON.stringify(
-                    passwordObj
-                )
-            })
-            const data = await response.json()
-            if(response.ok){
-                console.log("Password updated correctly!", data)
-            }
-            else if(response.status === 401){
-                setUserCredentials(null)
-                console.log("Session expired! Please login again.")
-                navigate('/auth/login')
-            }
-            else {
-                console.log("Unable to update user password: " + data)
-            }
-        }
-        catch(error){
-            console.log('Unable to connect to server')
-        }
+        // try{
+        //     const response = await fetch(`https://dummyjson.com/users/${userCredentials.id}`, {
+        //         method: 'PATCH', 
+        //         headers: { 
+        //             'Content-Type': 'application/json',
+        //             'Authorization': `Bearer ${userCredentials.token}`
+        //         },
+        //         body: JSON.stringify(
+        //             passwordObj
+        //         )
+        //     })
+        //     const data = await response.json()
+        //     if(response.ok){
+        //         console.log("Password updated correctly!", data)
+        //     }
+        //     else if(response.status === 401){
+        //         setUserCredentials(null)
+        //         console.log("Session expired! Please login again.")
+        //         navigate('/auth/login')
+        //     }
+        //     else {
+        //         console.log("Unable to update user password: " + data)
+        //     }
+        // }
+        // catch(error){
+        //     console.log('Unable to connect to server')
+        // }
     }
     return(
         <form onSubmit={handleSubmit}>
@@ -221,7 +219,7 @@ function UpdatePassword(){
                 <input type="password" name="confirm_password" className="form-control" />
             </div>
             <div className="text-end">
-                    <button type="submit" className="btn btn-warning">Submit</button>
+                    <button type="submit" className="btn btn-warning">Tassyklamak</button>
                 </div>
         </form>
     )
