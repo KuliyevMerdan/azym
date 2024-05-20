@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/azym/online/static/css/main.4d630d86.css",
-    "main.js": "/azym/online/static/js/main.dff5788f.js",
-    "index.html": "/azym/online/index.html",
-    "main.4d630d86.css.map": "/azym/online/static/css/main.4d630d86.css.map",
-    "main.dff5788f.js.map": "/azym/online/static/js/main.dff5788f.js.map"
+    "main.css": "/azym/azym/static/css/main.4d630d86.css",
+    "main.js": "/azym/azym/static/js/main.dff5788f.js",
+    "index.html": "/azym/azym/index.html",
+    "main.4d630d86.css.map": "/azym/azym/static/css/main.4d630d86.css.map",
+    "main.dff5788f.js.map": "/azym/azym/static/js/main.dff5788f.js.map"
   },
   "entrypoints": [
     "static/css/main.4d630d86.css",
