@@ -7,7 +7,7 @@ export function Navbar() {
         <>
           <nav className="navbar navbar-expand-lg bg-light border-bottom box-shadow">
                 <div className="container">
-                    <Link className="navbar-brand" to="/azym">
+                    <Link className="navbar-brand" to="/azym/">
                         <img src="" alt="" width='30' className="me-2" />Dükan
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +16,7 @@ export function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                            <Link className="nav-link text-dark" aria-current="page" to="/azym">Baş sahypa</Link>
+                            <Link className="nav-link text-dark" aria-current="page" to="/azym/">Baş sahypa</Link>
                             </li>
                         </ul>
                         {
@@ -44,9 +44,9 @@ export function Navbar() {
                                         Müşderi
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><Link className="dropdown-item" to="/azym/profile">Sazlamalar</Link></li>
+                                        <li><Link className="dropdown-item" to="/azym/profile/">Sazlamalar</Link></li>
                                         <li><hr className="dropdown-divider" /></li>
-                                        <li><Link className="dropdown-item" onClick={()=>{ setUserCredentials(null)}} to="/azym" >Çykmak</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{ setUserCredentials(null)}} to="/azym/" >Çykmak</Link></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -55,10 +55,10 @@ export function Navbar() {
                             !userCredentials &&
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <Link className="btn btn-outline-primary me-2 mb-2" role="button" to="/azym/auth/register">Hasap döretmek</Link>
+                                    <Link className="btn btn-outline-primary me-2 mb-2" role="button" to="/azym/auth/register/">Hasap döretmek</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="btn btn-primary" role="button" to="/azym/auth/login">Ulgama girmek</Link>
+                                    <Link className="btn btn-primary" role="button" to="/azym/auth/login/">Ulgama girmek</Link>
                                 </li>
                             </ul>
                         }
