@@ -64,22 +64,22 @@ const App: React.FC<AppProps> = () =>{
         <BrowserRouter>
           <Navbar />
             <Routes> 
-              <Route path='/' element={<Home />} />
-              <Route path='/contact' element={<Contact />} />
-              <Route path='/products/:id' element={<ProductDetails />} />
-              <Route path='/profile' element={<AuthenticatedUserRoute><UserProfile /></AuthenticatedUserRoute>} />
+              <Route path='/azym' element={<Home />} />
+              <Route path='/azym/contact' element={<Contact />} />
+              <Route path='/azym/products/:id' element={<ProductDetails />} />
+              <Route path='/azym/profile' element={<AuthenticatedUserRoute><UserProfile /></AuthenticatedUserRoute>} />
 
-              <Route path='/auth/register' element={<Register />} />
-              <Route path='/auth/login' element={<Login />} />
+              <Route path='/azym/auth/register' element={<Register />} />
+              <Route path='/azym/auth/login' element={<Login />} />
 
               <Route path='*' element={<NotFound />} />
               
-              <Route path='/admin/products' element={<AdminRoute><ProductList /></AdminRoute>} />
-              <Route path='/admin/products/create' element={<AdminRoute><CreateProduct /></AdminRoute>} />
-              <Route path='/admin/products/edit/:id' element={<AdminRoute><EditProduct /></AdminRoute>} />
+              <Route path='/azym/admin/products' element={<AdminRoute><ProductList /></AdminRoute>} />
+              <Route path='/azym/admin/products/create' element={<AdminRoute><CreateProduct /></AdminRoute>} />
+              <Route path='/azym/admin/products/edit/:id' element={<AdminRoute><EditProduct /></AdminRoute>} />
 
-              <Route path='/admin/users' element={<AdminRoute><UserList /></AdminRoute>} />
-              <Route path='/admin/users/details/:id' element={<AdminRoute><UserDetail /></AdminRoute>} />
+              <Route path='/azym/admin/users' element={<AdminRoute><UserList /></AdminRoute>} />
+              <Route path='/azym/admin/users/details/:id' element={<AdminRoute><UserDetail /></AdminRoute>} />
             </Routes>
           <Footer />
         </BrowserRouter>
