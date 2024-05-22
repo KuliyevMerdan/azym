@@ -35,8 +35,8 @@ export function ProductDetails(){
         <div className="container my-4">
             <div className="row">
                 <div className="col-md-4">
-                    <img src={"./images/Images/" + product?.id  + "/1.jpg"}  alt="..." className="img-fluid mb-3" width="250" />
-                    <img src={"./images/Images/" + product?.id  + "/2.jpg"}  alt="..." className="img-fluid mb-3" width="250" />
+                    <img src={"/azym/images/Images/" + product?.id  + "/1.jpg"}  alt="..." className="img-fluid mb-3" width="250" />
+                    <img src={"/azym/images/Images/" + product?.id  + "/2.jpg"}  alt="..." className="img-fluid mb-3" width="250" />
                 </div>
 
                     
