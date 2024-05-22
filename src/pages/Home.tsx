@@ -84,11 +84,11 @@ export function Home(){
             <div className="container text-white py-5">
                 <div className="row align-items-center g-5">
                     <div className="col-md-6">
-                        <h1 style={{ fontSize: "80px"}}>Online dükany</h1>
-                        <p>Biziň dükanymyzda täze harytlary al!</p>
+                        <h1 style={{ fontSize: "80px"}}>Online market</h1>
+                        <p>"Aragatnaşyk enjamlar" onlaýn market</p>
                     </div>
                     <div className="col-md-6 text-center">
-                        <img src="/images/hero.png" alt="hero" className="img-fluid" />
+                        <img src="./images/hero.png" alt="hero" className="img-fluid" />
                     </div>
                 </div>
             </div>
@@ -144,7 +144,7 @@ function ProductItem({product}: any){
                 {product.description.substr(0, 50)+ "..."}
             </p>
             <h4 className="mb-4">{product.price}</h4>
-            <Link to={"/products/" + product.id}  role="button" className="btn btn-primary btn-sm m-2" >Maglumat</Link>
+            <Link to={"/azym/products/" + product.id}  role="button" className="btn btn-primary btn-sm m-2" >Maglumat</Link>
         </div>
     )
 }

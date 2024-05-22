@@ -69,7 +69,7 @@ export function UserDetail(){
                 <div className="col-8">{!user.id ? "" : user.role === "admin" ? <span className="badge text-bg-warning">Dolandyryjy</span> : <span className="badge text-bg-success">Müşderi</span>}</div>
             </div>
             <hr />
-            <Link to="/admin/users" role="button" className="btn btn-secondary btn-sm">Yzyna gaýtmak</Link>
+            <Link to="/azym/admin/users" role="button" className="btn btn-secondary btn-sm">Yzyna gaýtmak</Link>
         </div>
     )
 }

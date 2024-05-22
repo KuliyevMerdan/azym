@@ -154,7 +154,7 @@ function UpdateProfile(){
                     </div>
                 </div>
                 <div className="text-end">
-                    <button type="submit" className="btn btn-primary" onClick={()=>{navigate("/")}}>Tassyklamak</button>
+                    <button type="submit" className="btn btn-primary" onClick={()=>{navigate("/azym")}}>Tassyklamak</button>
                     {/* <button className="btn btn-warning btn-sm">Cancel</button> */}
                 </div>
             </form>

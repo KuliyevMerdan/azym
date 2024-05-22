@@ -81,7 +81,7 @@ export function UserList(){
                                         <span className="badge text-bg-success">Müşderi</span>
                                     }</td>
                                     <td>
-                                        <Link to={"/admin/users/details/" + user.id} className="btn btn-primary btn-sm" role="button">Maglumat</Link>
+                                        <Link to={"/azym/admin/users/details/" + user.id} className="btn btn-primary btn-sm" role="button">Maglumat</Link>
                                     </td>
                                 </tr>
                             )

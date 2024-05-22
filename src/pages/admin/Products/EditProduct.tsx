@@ -54,7 +54,7 @@ export function EditProduct(){
 
     async function handleSubmit(event: any){
         event.preventDefault()
-        navigate("/admin/products")
+        navigate("/azym/admin/products")
         // const formData = new FormData(event.target)
         // const product = Object.fromEntries(formData.entries())
 
@@ -174,7 +174,7 @@ export function EditProduct(){
                                 <button type="submit" className="btn btn-primary">Tassyklamak</button>
                             </div>
                             <div className="col-sm-4 d-grid">
-                                <Link to="/admin/products" role="button" className="btn btn-secondary">Goýbolsun etmek</Link>
+                                <Link to="/azym/admin/products" role="button" className="btn btn-secondary">Goýbolsun etmek</Link>
                             </div>
                         </div>
                     </form>

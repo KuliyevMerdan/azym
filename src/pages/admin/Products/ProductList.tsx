@@ -100,7 +100,7 @@ export function ProductList(){
 
             <div className="row mb-3">
                 <div className="col">
-                    <Link to="/admin/products/create" className="btn btn-primary me-1 mb-2" role="button">Haryt goşmak</Link>
+                    <Link to="/azym/admin/products/create" className="btn btn-primary me-1 mb-2" role="button">Haryt goşmak</Link>
                     <button type="button" className="btn btn-outline-primary" onClick={getProducts}>Täzelemek</button>
                 </div>
                 <div className="col">
@@ -136,7 +136,7 @@ export function ProductList(){
                                     {/* <td className="text-center"><img src={ product.images[0] } alt="" height="100" /></td> */}
                                     {/* <td>{product.stock}</td> */}
                                     <td style={{ width: "10px", whiteSpace: "nowrap" }}>
-                                        <Link to={"/admin/products/edit/" + product.id } className="btn btn-primary btn-sm me-1">Üýtgetmek</Link>
+                                        <Link to={"/azym/admin/products/edit/" + product.id } className="btn btn-primary btn-sm me-1">Üýtgetmek</Link>
                                         {/* <button type="button" onClick={()=>{deleteProduct(product.id)}} className="btn btn-danger btn-sm">Delete</button> */}
                                     </td>
                                 </tr>
