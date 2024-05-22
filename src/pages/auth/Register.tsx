@@ -6,7 +6,7 @@ export function Register(){
     const navigate = useNavigate()
     const {userCredentials, setUserCredentials} = useContext(AppContext)
     if(userCredentials){
-        return <Navigate to="/azym" />
+        return <Navigate to="/azym/" />
     }
     async function handleSubmit(event: any){
         event.preventDefault()
@@ -26,7 +26,7 @@ export function Register(){
 
         delete user.confirm_password
         setUserCredentials(user)
-        navigate("/azym")
+        navigate("/azym/")
 
         // try {
         //     const response = await fetch("https://dummyjson.com/users/add", {
@@ -100,7 +100,7 @@ export function Register(){
                                 <button type="submit" className="btn btn-primary">Hasap döretmek</button>
                             </div>
                             <div className="col-sm-4 d-grid">
-                                <Link to="/azym" className="btn btn-outline-primary" role="button">Goýbolsun etmek</Link>
+                                <Link to="/azym/" className="btn btn-outline-primary" role="button">Goýbolsun etmek</Link>
                             </div>
                         </div>
                     </form>

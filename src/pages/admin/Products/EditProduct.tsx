@@ -149,8 +149,8 @@ export function EditProduct(){
 
                         <div className="row mb-3">
                             <div className="offset-sm-4 col-sm-8">
-                            <img src={"/images/Images/" + initialData?.id  + "/1.jpg"}  alt="..." className="img-fluid mb-3" width="250" />
-                            <img src={"/images/Images/" + initialData?.id  + "/2.jpg"}  alt="..." className="img-fluid mb-3" width="250" />
+                            <img src={"/azym/images/Images/" + initialData?.id  + "/1.jpg"}  alt="..." className="img-fluid mb-3" width="250" />
+                            <img src={"/azym/images/Images/" + initialData?.id  + "/2.jpg"}  alt="..." className="img-fluid mb-3" width="250" />
                             </div>
                         </div>
 {/* 
