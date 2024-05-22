@@ -100,7 +100,7 @@ export function ProductList(){
 
             <div className="row mb-3">
                 <div className="col">
-                    <Link to="/azym/admin/products/create" className="btn btn-primary me-1 mb-2" role="button">Haryt goşmak</Link>
+                    <Link to="/azym/admin/products/create/" className="btn btn-primary me-1 mb-2" role="button">Haryt goşmak</Link>
                     <button type="button" className="btn btn-outline-primary" onClick={getProducts}>Täzelemek</button>
                 </div>
                 <div className="col">

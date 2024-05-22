@@ -111,7 +111,7 @@ export function CreateProduct(){
                                 <button type="submit" className="btn btn-primary">Tassyklamak</button>
                             </div>
                             <div className="col-sm-4 d-grid">
-                                <Link to="/azym/admin/products" role="button" className="btn btn-secondary">Goýbolsun etmek</Link>
+                                <Link to="/azym/admin/products/" role="button" className="btn btn-secondary">Goýbolsun etmek</Link>
                             </div>
                         </div>
                     </form>

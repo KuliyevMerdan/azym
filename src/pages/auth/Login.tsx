@@ -8,7 +8,7 @@ export function Login(){
     const {userCredentials, setUserCredentials} = useContext(AppContext)
     if(userCredentials){
         console.log(userCredentials)
-        return <Navigate to="/azym" />
+        return <Navigate to="/azym/" />
     }
     async function handleSubmit(event: any){
        
@@ -29,7 +29,7 @@ export function Login(){
             role
         }
         setUserCredentials(credentials)
-        navigate('/azym')
+        navigate('/azym/')
 
         // try{
         //     const response = await fetch('https://dummyjson.com/auth/login', {
@@ -76,7 +76,7 @@ export function Login(){
                             <button type="submit" className="btn btn-primary">Girmek</button>
                         </div>
                         <div className="col d-grid">
-                            <Link to="/azym" role="button" className="btn btn-outline-primary">Goýbolsun etmek</Link>
+                            <Link to="/azym/" role="button" className="btn btn-outline-primary">Goýbolsun etmek</Link>
                         </div>
                     </div>
                 </form>
