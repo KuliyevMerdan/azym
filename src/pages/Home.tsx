@@ -133,7 +133,7 @@ export function Home(){
 function ProductItem({product}: any){
     return(
         <div className="rounded border shadow p-4 text-center h-100">
-            <img src={"/images/Images/" + product.id  + "/1.jpg"} 
+            <img src={"./images/Images/" + product.id  + "/1.jpg"} 
             alt="..." 
             style={{ height: "220px", objectFit: "contain"}} 
             className="img-fluid" />
